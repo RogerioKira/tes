@@ -12,11 +12,11 @@ const filter = (e) => {
         <span class="whitespace-nowrap ml-1">Show all</span>
     </label>
     <label class="flex mr-4 items-center flex-nowrap">
-        <input type="radio" name = "show" value="today" checked @change="filter">
+        <input type="radio" name = "show" value="today"  @change="filter">
         <span class="whitespace-nowrap ml-1">Due Today</span>
     </label>
     <label class="flex mr-4 items-center flex-nowrap">
-        <input type="radio" name = "show" value="past" checked @change="filter">
+        <input type="radio" name = "show" value="past"  @change="filter">
         <span class="whitespace-nowrap ml-1">Past Due</span>
     </label>
 

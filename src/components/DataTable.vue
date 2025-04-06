@@ -4,9 +4,9 @@ import FilterRadios from "./FilterRadios.vue";
 import FilterDropdown from "./FilterDropdown.vue";
 import{computed, ref} from "vue";
 
-const searchFilter = ref(values: '');
-const radioFilter = ref(values: '');
-const statusesFilter = ref(values:[]);
+const searchFilter = ref(value: '');
+const radioFilter = ref(value: '');
+const statusesFilter = ref(value:[]);
 
 const props = defineProps(props:{
     items:{
@@ -57,7 +57,7 @@ const handCheckboxFilter = (filter) => {
     if(statusesFilter.value.includes(filter)){
         return statusesFilter.value.splice(statusesFilter.value.index(filter), deleteCount:1);
     }
-    return statusesFilter.value.push(filter)
+    return statusesFilter.value.push(filter);
 };
 
 </script>
@@ -78,7 +78,7 @@ const handCheckboxFilter = (filter) => {
         <thead class="test-xs text-gray-700 uppercase bg-gray-50">
             <tr>
                 <th class="px-4 py-3">Id</th>
-                <th class="px-4 py-3">assigned To</th>
+                <th class="px-4 py-3">Assigned To</th>
                 <th class="px-4 py-3">Status</th>
                 <th class="px-4 py-3">Title </th>
                 <th class="px-4 py-3">Due at</th>
@@ -91,8 +91,9 @@ const handCheckboxFilter = (filter) => {
             <tr v-for="item in filteredItens" :key="item.Id" class="border-b">
                 <td class="px-4 py-3 font-medium text-gray-900">({item.id})</td>
                 <td class="px-4 py-3 font-medium text-gray-900">({item.user.name})</td>
-                <td class="px-4 py-3"({item.Status})></td>
-                <td class="px-4 py-3"({item.Title})></td>
+                <td class="px-4 py-3"({item.status})></td>
+                <td class="px-4 py-3"({item.title})></td>
+                <td class="px-4 py-3"({item.due_at})></td>
                 <td class="px-4 py-3 flex items-centere justify-end">
                     <a href="" class="text-indigo-500 houver:underline">Details</a>
                 </td>

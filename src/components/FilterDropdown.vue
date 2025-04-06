@@ -1,6 +1,8 @@
 <script setup>
 import {ref} from "vue";
+
 const show = ref(valeu:false);
+
 const props = defineProps(props{
     items:{
         type:Array,
@@ -11,7 +13,7 @@ const props = defineProps(props{
 const emit = defineEmits(emitOptions: ['filter']);
 
 const statuses =computed(getter() => {
-    return [...new Set(props.items.map(item => Status))];
+    return [...new Set(props.items.map(item => status))];
 });
 const filter = (e) =>{
     emit('filter', e.target.value);
